@@ -17,24 +17,43 @@
 			font-size: 70px;
 		}
 		body{margin: 0; text-align: center; background-color: #143129; color: black;}
+		
+		/*footer styles - add everywhere*/
+
+		footer{background-color: orange; width: 100%; color: white; margin-top: 200px; clear: both; position: relative;}
+		footer a{color: white; text-decoration: none; margin: 10px 18px; font-size: 21px; transition-duration: .2s;}
+		footer a:hover{color: black;}
+		footer p{font-size: 35px; font-weight: bold}
 	</style>
-	<link rel="icon" href="no-nose.jpg">
+	<link rel="icon" href="imgs/no-nose.jpg">
 </head>
 <body>
 	<header><p>The Voldermort Nose Remover!</p></header>
-<img src="nose.jpg">
+<img src="imgs/nose.jpg">
 <p class="p">Click the image to remove his nose!</p>
+
 </body>
+
+<footer>
+	<p>Check out some more dumb stuff:</p>
+	<nav class="navbar-nav">
+		<ul class="nav justify-content-center">
+		<li class="nav-item"><a href="index.html">Voldermort's Nose</a></li>
+		<li class="nav-item"><a href="dora.html">Running Dora</a></li>
+	</ul>
+	</nav>
+</footer>
+
 <script type="text/javascript">
 	var voldy = document.querySelector('img');
 	var txt = document.querySelector('.p')
 	voldy.onclick = function wow() {
-		if (voldy.getAttribute('src') === 'nose.jpg'){
-			voldy.src = 'no-nose.jpg'
+		if (voldy.getAttribute('src') === 'imgs/nose.jpg'){
+			voldy.src = 'imgs/no-nose.jpg'
 			txt.textContent = 'WOW! You removed his nose. Click it again to put it back on.'
 		}
 		else{
-			voldy.src = 'nose.jpg'
+			voldy.src = 'imgs/nose.jpg'
 			txt.textContent = 'Click the image to remove his nose!'
 		}
 	}
