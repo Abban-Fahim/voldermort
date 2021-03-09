@@ -23,10 +23,7 @@
 <body>
 	<header>dora be runnin<span>(Click the play button to start the video! You may have to reload it a bunch of times)</span></header>
 	<video src="imgs/dora.mp4" loop></video>
-	<div><i class="fas fa-backward"></i><i class="fa fa-play"></i><i class="fas fa-forward"></i></div>
-
-	
-
+	<div></i><i class="fa fa-play"></i><i class="fas fa-pause"></i><i class="fas fa-expand"></i></div>
 </body>
 
 <footer>
@@ -40,27 +37,25 @@
 </footer>
 
 <script type="text/javascript">
-	var vid = document.querySelector('video');
-	var pause = document.querySelector('.fa-play');
-	var forward = document.querySelector('.fa-forward')
-	var backward = document.querySelector('.fa-backward')
-	pause.onclick = function(){
-		if (pause.className === 'fa fa-pause'){
-			pause.className = 'fa fa-play'
-			vid.pause()
+	var video = document.querySelector('video');
+	var resumeBtn = document.querySelector('.fa-play');
+	var pauseBtn = document.querySelector('.fa-pause')
+	var fullscreenBtn = document.querySelector('.fa-expand')
+	video.addEventListener('click', () => {
+		if (video.paused) {
+			video.play()
+		} else {
+			video.pause()
 		}
-		else{pause.className = 'fa fa-pause'; vid.play()}
-	}
-	forward.onclick = function(){
-		var speed = vid.playbackRate
-		vid.playbackRate = speed + 1
-		console.log(vid.playbackRate)
-	}
-	backward.onclick = function(){
-		var speed = vid.playbackRate
-		var dec = speed / 2
-		vid.playbackRate = speed - dec
-		console.log(vid.playbackRate)
-	}
+	});
+	
+	resumeBtn.addEventListener('click', () => video.play());
+	
+	pauseBtn.addEventListener('click', () => video.pause());
+	
+	fullscreenBtn.addEventListener('click', () => {
+		video.requestFullscreen();
+	});
+
 </script>
 </html>
